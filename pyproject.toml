@@ -3,12 +3,12 @@ requires = ["setuptools >=67", "setuptools-scm >=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "qbittorrent-api"
+name = "qcok-api"
 requires-python = ">=3.9"
-description = "Python client for qBittorrent v4.1+ Web API."
-authors = [{name = "Russell Martin"}]
-maintainers = [{name = "Russell Martin"}]
-keywords = ["python", "qbittorrent", "api", "client", "torrent", "torrents", "webui", "web"]
+description = "Python client for qcok-api v4.1+ Web API."
+authors = [{name = "qcok-api"}]
+maintainers = [{name = "qcok-api"}]
+keywords = ["python", "qcok-api", "api", "client", "qcok-api", "qcok-apis", "webui", "web"]
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Development Status :: 5 - Production/Stable",
@@ -57,10 +57,10 @@ docs = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/rmartin16/qbittorrent-api"
-"Documentation" = "https://qbittorrent-api.readthedocs.io/"
-"API Reference" = "https://qbittorrent-api.readthedocs.io/en/latest/api.html"
-"Source" = "https://github.com/rmartin16/qbittorrent-api"
+"Homepage" = "https://github.com/rmartin16/qcok-api"
+"Documentation" = "https://qcok-api.readthedocs.io/"
+"API Reference" = "https://qcok-api.readthedocs.io/en/latest/api.html"
+"Source" = "https://github.com/rmartin16/qcok-api"
 
 [tool.setuptools.dynamic]
 readme = {file = ["README.md", "CHANGELOG.md", "LICENSE"], content-type = "text/markdown"}
@@ -97,7 +97,7 @@ testpaths = ["tests"]
 parallel = true
 branch = true
 relative_files = true
-source_pkgs = ["qbittorrentapi"]
+source_pkgs = ["qcok-apiapi"]
 omit = ["**/_attrdict.py"]
 
 [tool.coverage.paths]
