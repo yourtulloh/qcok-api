@@ -15,9 +15,9 @@ from typing import (
     cast,
 )
 
-from qbittorrentapi._version_support import v
-from qbittorrentapi.app import AppAPIMixIn
-from qbittorrentapi.definitions import (
+from qcokapi._version_support import v
+from qcokapi.app import AppAPIMixIn
+from qcokapi.definitions import (
     APIKwargsT,
     APINames,
     ClientCache,
@@ -29,7 +29,7 @@ from qbittorrentapi.definitions import (
     ListInputT,
     TorrentState,
 )
-from qbittorrentapi.exceptions import (
+from qcokapi.exceptions import (
     TorrentFileError,
     TorrentFileNotFoundError,
     TorrentFilePermissionError,
@@ -201,7 +201,7 @@ class TorrentsAPIMixIn(AppAPIMixIn):
     Implementation of all Torrents API methods.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> client.torrents_add(urls="...")
         >>> client.torrents_reannounce()
@@ -519,7 +519,7 @@ class TorrentsAPIMixIn(AppAPIMixIn):
     ) -> TrackersList:
         """
         Retrieve individual torrent's trackers. Tracker status is defined in
-        :class:`~qbittorrentapi.definitions.TrackerStatus`.
+        :class:`~qcokapi.definitions.TrackerStatus`.
 
         :raises NotFound404Error:
 
@@ -1859,7 +1859,7 @@ class TorrentDictionary(ClientCache[TorrentsAPIMixIn], ListEntry):
     the ``Torrents`` API endpoints.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> # these are all the same attributes that are available as named in the
         >>> #  endpoints or the more pythonic names in Client (with or without 'transfer_' prepended)
@@ -2433,7 +2433,7 @@ class Torrents(ClientCache[TorrentsAPIMixIn]):
     Allows interaction with the ``Torrents`` API endpoints.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> # these are all the same attributes that are available as named in the
         >>> #  endpoints or the more pythonic names in Client (with or without 'torrents_' prepended)
@@ -3243,7 +3243,7 @@ class TorrentCategories(ClientCache[TorrentsAPIMixIn]):
     Allows interaction with torrent categories within the ``Torrents`` API endpoints.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> # these are all the same attributes that are available as named in the
         >>> #  endpoints or the more pythonic names in Client (with or without 'torrents_' prepended)
@@ -3325,7 +3325,7 @@ class TorrentTags(ClientCache[TorrentsAPIMixIn]):
     Allows interaction with torrent tags within the "Torrent" API endpoints.
 
     Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> tags = client.torrent_tags.tags
         >>> client.torrent_tags.tags = "tv show"  # create category

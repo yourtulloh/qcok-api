@@ -2,8 +2,8 @@ import sys
 
 import pytest
 
-from qbittorrentapi import APINames
-from qbittorrentapi.transfer import TransferInfoDictionary
+from qcokapi import APINames
+from qcokapi.transfer import TransferInfoDictionary
 
 
 @pytest.mark.skipif(sys.version_info < (3, 9), reason="removeprefix not in 3.8")

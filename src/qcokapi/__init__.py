@@ -1,5 +1,5 @@
-from qbittorrentapi._version_support import Version
-from qbittorrentapi.app import (
+from qcokapi._version_support import Version
+from qcokapi.app import (
     AppAPIMixIn,
     ApplicationPreferencesDictionary,
     BuildInfoDictionary,
@@ -9,15 +9,15 @@ from qbittorrentapi.app import (
     NetworkInterfaceAddressList,
     NetworkInterfaceList,
 )
-from qbittorrentapi.auth import AuthAPIMixIn
-from qbittorrentapi.client import Client
-from qbittorrentapi.definitions import (
+from qcokapi.auth import AuthAPIMixIn
+from qcokapi.client import Client
+from qcokapi.definitions import (
     APINames,
     TorrentState,
     TorrentStates,
     TrackerStatus,
 )
-from qbittorrentapi.exceptions import (
+from qcokapi.exceptions import (
     APIConnectionError,
     APIError,
     Conflict409Error,
@@ -45,10 +45,10 @@ from qbittorrentapi.exceptions import (
     UnsupportedMediaType415Error,
     UnsupportedQbittorrentVersion,
 )
-from qbittorrentapi.log import LogAPIMixIn, LogEntry, LogMainList, LogPeer, LogPeersList
-from qbittorrentapi.request import Request
-from qbittorrentapi.rss import RSSAPIMixIn, RSSitemsDictionary, RSSRulesDictionary
-from qbittorrentapi.search import (
+from qcokapi.log import LogAPIMixIn, LogEntry, LogMainList, LogPeer, LogPeersList
+from qcokapi.request import Request
+from qcokapi.rss import RSSAPIMixIn, RSSitemsDictionary, RSSRulesDictionary
+from qcokapi.search import (
     SearchAPIMixIn,
     SearchCategoriesList,
     SearchCategory,
@@ -59,12 +59,12 @@ from qbittorrentapi.search import (
     SearchStatus,
     SearchStatusesList,
 )
-from qbittorrentapi.sync import (
+from qcokapi.sync import (
     SyncAPIMixIn,
     SyncMainDataDictionary,
     SyncTorrentPeersDictionary,
 )
-from qbittorrentapi.torrentcreator import (
+from qcokapi.torrentcreator import (
     TaskStatus,
     TorrentCreator,
     TorrentCreatorAPIMixIn,
@@ -72,7 +72,7 @@ from qbittorrentapi.torrentcreator import (
     TorrentCreatorTaskStatus,
     TorrentCreatorTaskStatusList,
 )
-from qbittorrentapi.torrents import (
+from qcokapi.torrents import (
     Tag,
     TagList,
     TorrentCategoriesDictionary,
@@ -91,7 +91,7 @@ from qbittorrentapi.torrents import (
     WebSeed,
     WebSeedsList,
 )
-from qbittorrentapi.transfer import TransferAPIMixIn, TransferInfoDictionary
+from qcokapi.transfer import TransferAPIMixIn, TransferInfoDictionary
 
 __all__ = (
     "APIConnectionError",

@@ -1,7 +1,7 @@
 Exceptions
 ==========
 
-.. automodule:: qbittorrentapi.exceptions
+.. automodule:: qcokapi.exceptions
     :show-inheritance:
     :members:
     :undoc-members:

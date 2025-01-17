@@ -7,12 +7,12 @@ import pytest
 from requests import Response
 from requests.adapters import DEFAULT_POOLBLOCK, DEFAULT_POOLSIZE
 
-from qbittorrentapi import APINames, Client, exceptions
-from qbittorrentapi._version_support import v
-from qbittorrentapi.definitions import Dictionary, List
-from qbittorrentapi.exceptions import Forbidden403Error
-from qbittorrentapi.request import Request
-from qbittorrentapi.torrents import TorrentDictionary, TorrentInfoList
+from qcokapi import APINames, Client, exceptions
+from qcokapi._version_support import v
+from qcokapi.definitions import Dictionary, List
+from qcokapi.exceptions import Forbidden403Error
+from qcokapi.request import Request
+from qcokapi.torrents import TorrentDictionary, TorrentInfoList
 from tests.conftest import IS_QBT_DEV
 from tests.utils import mkpath
 
@@ -495,18 +495,18 @@ def test_unsupported_version_error(monkeypatch):
 
 def test_disable_logging():
     Client(DISABLE_LOGGING_DEBUG_OUTPUT=False)
-    assert logging.getLogger("qbittorrentapi").level == logging.NOTSET
+    assert logging.getLogger("qcokapi").level == logging.NOTSET
     assert logging.getLogger("requests").level == logging.NOTSET
     assert logging.getLogger("urllib3").level == logging.NOTSET
 
     Client(DISABLE_LOGGING_DEBUG_OUTPUT=True)
-    assert logging.getLogger("qbittorrentapi").level == logging.INFO
+    assert logging.getLogger("qcokapi").level == logging.INFO
     assert logging.getLogger("requests").level == logging.INFO
     assert logging.getLogger("urllib3").level == logging.INFO
 
-    logging.getLogger("qbittorrentapi").setLevel(level=logging.CRITICAL)
+    logging.getLogger("qcokapi").setLevel(level=logging.CRITICAL)
     Client(DISABLE_LOGGING_DEBUG_OUTPUT=True)
-    assert logging.getLogger("qbittorrentapi").level == logging.CRITICAL
+    assert logging.getLogger("qcokapi").level == logging.CRITICAL
     assert logging.getLogger("requests").level == logging.INFO
     assert logging.getLogger("urllib3").level == logging.INFO
 
@@ -656,7 +656,7 @@ def test_request_retry_success(monkeypatch, caplog):
     with monkeypatch.context() as m:
         m.setattr(client, "_request", request500)
         with (
-            caplog.at_level(logging.DEBUG, logger="qbittorrentapi"),
+            caplog.at_level(logging.DEBUG, logger="qcokapi"),
             pytest.raises(exceptions.HTTP500Error),
         ):
             client.app_version()
@@ -667,7 +667,7 @@ def test_request_retry_skip(caplog):
     client = Client(VERIFY_WEBUI_CERTIFICATE=False)
     client.auth_log_in()
     with (
-        caplog.at_level(logging.DEBUG, logger="qbittorrentapi"),
+        caplog.at_level(logging.DEBUG, logger="qcokapi"),
         pytest.raises(exceptions.MissingRequiredParameters400Error),
     ):
         client.torrents_rename()
@@ -677,7 +677,7 @@ def test_request_retry_skip(caplog):
 def test_verbose_logging(caplog):
     client = Client(VERBOSE_RESPONSE_LOGGING=True, VERIFY_WEBUI_CERTIFICATE=False)
     with (
-        caplog.at_level(logging.DEBUG, logger="qbittorrentapi"),
+        caplog.at_level(logging.DEBUG, logger="qcokapi"),
         pytest.raises(exceptions.NotFound404Error),
     ):
         client.torrents_rename(torrent_hash="asdf", new_torrent_name="erty")
@@ -699,14 +699,14 @@ def test_auto_authentication(caplog, app_version):
     )
     # check if first API call works if already logged in
     client.auth_log_in()
-    with caplog.at_level(logging.DEBUG, logger="qbittorrentapi"):
+    with caplog.at_level(logging.DEBUG, logger="qcokapi"):
         qbt_version = client.app.version
     assert "Login may have expired...attempting new login" not in caplog.text
     assert qbt_version == app_version
 
     # ensure login happens after first API call fails
     client.auth_log_out()
-    with caplog.at_level(logging.DEBUG, logger="qbittorrentapi"):
+    with caplog.at_level(logging.DEBUG, logger="qcokapi"):
         qbt_version = client.app.version
     assert "Login may have expired...attempting new login" in caplog.text
     assert qbt_version == app_version

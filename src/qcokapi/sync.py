@@ -2,8 +2,8 @@ from __future__ import annotations
 
 from typing import cast
 
-from qbittorrentapi.app import AppAPIMixIn
-from qbittorrentapi.definitions import (
+from qcokapi.app import AppAPIMixIn
+from qcokapi.definitions import (
     APIKwargsT,
     APINames,
     ClientCache,
@@ -33,7 +33,7 @@ class SyncAPIMixIn(AppAPIMixIn):
     Implementation of all ``Sync`` API Methods.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> maindata = client.sync_maindata(rid="...")
         >>> torrent_peers = client.sync_torrent_peers(torrent_hash="...", rid="...")
@@ -100,7 +100,7 @@ class Sync(ClientCache[SyncAPIMixIn]):
     Allows interaction with the ``Sync`` API endpoints.
 
     Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> # these are all the same attributes that are available as named in the
         >>> #  endpoints or the more pythonic names in Client (with or without 'sync_' prepended)

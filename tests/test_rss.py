@@ -4,10 +4,10 @@ from time import sleep
 
 import pytest
 
-from qbittorrentapi import APINames
-from qbittorrentapi._version_support import v
-from qbittorrentapi.exceptions import APIError, Conflict409Error
-from qbittorrentapi.rss import RSSitemsDictionary
+from qcokapi import APINames
+from qcokapi._version_support import v
+from qcokapi.exceptions import APIError, Conflict409Error
+from qcokapi.rss import RSSitemsDictionary
 from tests.utils import check, retry
 
 FOLDER_ONE = "testFolderOne"

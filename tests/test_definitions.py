@@ -2,8 +2,8 @@ from enum import Enum
 
 import pytest
 
-from qbittorrentapi._attrdict import AttrDict
-from qbittorrentapi.definitions import (
+from qcokapi._attrdict import AttrDict
+from qcokapi.definitions import (
     Dictionary,
     List,
     ListEntry,

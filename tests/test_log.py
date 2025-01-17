@@ -2,8 +2,8 @@ import sys
 
 import pytest
 
-from qbittorrentapi.definitions import APINames
-from qbittorrentapi.log import LogMainList, LogPeersList
+from qcokapi.definitions import APINames
+from qcokapi.log import LogMainList, LogPeersList
 
 
 @pytest.mark.skipif(sys.version_info < (3, 9), reason="removeprefix not in 3.8")

@@ -14,7 +14,7 @@ set ``SIMPLE_RESPONSES=True`` when instantiating the client.
 
 .. code:: python
 
-    qbt_client = qbittorrentapi.Client(
+    qbt_client = qcokapi.Client(
         host='localhost:8080',
         username='admin',
         password='adminadmin',

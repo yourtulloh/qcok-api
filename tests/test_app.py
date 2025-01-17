@@ -2,9 +2,9 @@ import sys
 
 import pytest
 
-from qbittorrentapi import APINames, CookieList
-from qbittorrentapi._attrdict import AttrDict
-from qbittorrentapi.app import (
+from qcokapi import APINames, CookieList
+from qcokapi._attrdict import AttrDict
+from qcokapi.app import (
     DirectoryContentList,
     NetworkInterface,
     NetworkInterfaceAddressList,

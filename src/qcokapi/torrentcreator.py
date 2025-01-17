@@ -5,8 +5,8 @@ import os
 from collections.abc import Mapping
 from typing import Any, Literal, cast
 
-from qbittorrentapi.app import AppAPIMixIn
-from qbittorrentapi.definitions import (
+from qcokapi.app import AppAPIMixIn
+from qcokapi.definitions import (
     APIKwargsT,
     APINames,
     ClientCache,
@@ -51,7 +51,7 @@ class TorrentCreatorAPIMixIn(AppAPIMixIn):
     Implementation of all ``TorrentCreator`` API methods.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> task = client.torrentcreator_add_task(source_path="/path/to/data")
         >>> if TaskStatus(task.status().status) == TaskStatus.FINISHED:
@@ -241,7 +241,7 @@ class TorrentCreator(ClientCache[TorrentCreatorAPIMixIn]):
     Allows interaction with ``TorrentCreator`` API endpoints.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> # this is all the same attributes that are available as named in the
         >>> #  endpoints or the more pythonic names in Client (with or without 'torrentcreator_' prepended)

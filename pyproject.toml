@@ -3,12 +3,12 @@ requires = ["setuptools >=67", "setuptools-scm >=8"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "qcok-api"
+name = "qcokapi"
 requires-python = ">=3.9"
-description = "Python client for qcok-api v4.1+ Web API."
-authors = [{name = "qcok-api"}]
-maintainers = [{name = "qcok-api"}]
-keywords = ["python", "qcok-api", "api", "client", "qcok-api", "qcok-apis", "webui", "web"]
+description = "Python client for qcokapi v4.1+ Web API."
+authors = [{name = "qcokapi"}]
+maintainers = [{name = "qcokapi"}]
+keywords = ["python", "qcokapi", "api", "client", "qcokapi", "qcokapis", "webui", "web"]
 classifiers = [
     "License :: OSI Approved :: MIT License",
     "Development Status :: 5 - Production/Stable",
@@ -57,13 +57,13 @@ docs = [
 ]
 
 [project.urls]
-"Homepage" = "https://github.com/rmartin16/qcok-api"
-"Documentation" = "https://qcok-api.readthedocs.io/"
-"API Reference" = "https://qcok-api.readthedocs.io/en/latest/api.html"
-"Source" = "https://github.com/rmartin16/qcok-api"
+"Homepage" = "https://github.com/rmartin16/qcokapi"
+"Documentation" = "https://qcokapi.readthedocs.io/"
+"API Reference" = "https://qcokapi.readthedocs.io/en/latest/api.html"
+"Source" = "https://github.com/qcok/qcokapi"
 
 [tool.setuptools.dynamic]
-readme = {file = ["README.md", "CHANGELOG.md", "LICENSE"], content-type = "text/markdown"}
+readme = {file = ["LICENSE"], content-type = "text/markdown"}
 
 [tool.setuptools_scm]
 # section must be present to trigger its use
@@ -97,7 +97,7 @@ testpaths = ["tests"]
 parallel = true
 branch = true
 relative_files = true
-source_pkgs = ["qcok-apiapi"]
+source_pkgs = ["qcokapi"]
 omit = ["**/_attrdict.py"]
 
 [tool.coverage.paths]

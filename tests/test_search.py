@@ -2,8 +2,8 @@ import sys
 
 import pytest
 
-from qbittorrentapi import APINames, NotFound404Error
-from qbittorrentapi.search import (
+from qcokapi import APINames, NotFound404Error
+from qcokapi.search import (
     SearchCategoriesList,
     SearchJobDictionary,
     SearchPluginsList,

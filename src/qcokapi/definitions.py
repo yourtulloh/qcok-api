@@ -11,10 +11,10 @@ from typing import (
     Union,
 )
 
-from qbittorrentapi._attrdict import AttrDict
+from qcokapi._attrdict import AttrDict
 
 if TYPE_CHECKING:
-    from qbittorrentapi import Request
+    from qcokapi import Request
 
 K = TypeVar("K")
 V = TypeVar("V")
@@ -73,7 +73,7 @@ class TorrentState(str, Enum):
         - code: `<https://github.com/qbittorrent/qBittorrent/blob/8e6515be2c8cc2b335002ab8913e9dcdd7873204/src/base/bittorrent/torrent.h#L79>`_
 
     :Usage:
-        >>> from qbittorrentapi import Client, TorrentState
+        >>> from qcokapi import Client, TorrentState
         >>> client = Client()
         >>> # print torrent hashes for torrents that are downloading
         >>> for torrent in client.torrents_info():
@@ -191,7 +191,7 @@ class TrackerStatus(int, Enum):
         - code: `<https://github.com/qbittorrent/qBittorrent/blob/5dcc14153f046209f1067299494a82e5294d883a/src/base/bittorrent/trackerentry.h#L42>`_
 
     :Usage:
-        >>> from qbittorrentapi import Client, TrackerStatus
+        >>> from qcokapi import Client, TrackerStatus
         >>> client = Client()
         >>> # print torrent hashes for torrents that are downloading
         >>> for torrent in client.torrents_info():

@@ -6,9 +6,9 @@ from time import sleep
 import pytest
 import requests
 
-from qbittorrentapi import APINames
-from qbittorrentapi._version_support import v
-from qbittorrentapi.exceptions import (
+from qcokapi import APINames
+from qcokapi._version_support import v
+from qcokapi.exceptions import (
     Conflict409Error,
     Forbidden403Error,
     InvalidRequest400Error,
@@ -16,7 +16,7 @@ from qbittorrentapi.exceptions import (
     TorrentFileNotFoundError,
     TorrentFilePermissionError,
 )
-from qbittorrentapi.torrents import (
+from qcokapi.torrents import (
     TagList,
     TorrentCategoriesDictionary,
     TorrentFilesList,

@@ -48,16 +48,16 @@ nitpick_ignore = [
     ("py:class", "ListInputT"),
     ("py:class", "Response"),
     ("py:class", "Request"),
-    ("py:class", "qbittorrentapi.request.ResponseT"),
-    ("py:class", "qbittorrentapi.request.T"),
-    ("py:class", "qbittorrentapi.torrents.TorrentFilesT"),
-    ("py:obj", "qbittorrentapi._attrdict.K"),
-    ("py:obj", "qbittorrentapi._attrdict.V"),
-    ("py:obj", "qbittorrentapi.definitions.K"),
-    ("py:obj", "qbittorrentapi.definitions.V"),
+    ("py:class", "qcokapi.request.ResponseT"),
+    ("py:class", "qcokapi.request.T"),
+    ("py:class", "qcokapi.torrents.TorrentFilesT"),
+    ("py:obj", "qcokapi._attrdict.K"),
+    ("py:obj", "qcokapi._attrdict.V"),
+    ("py:obj", "qcokapi.definitions.K"),
+    ("py:obj", "qcokapi.definitions.V"),
 ]
 
-autodoc_type_aliases = {"JsonValueT": "qbittorrentapi.definitions.JsonValueT"}
+autodoc_type_aliases = {"JsonValueT": "qcokapi.definitions.JsonValueT"}
 always_use_bars_union = True
 add_module_names = False
 autodoc_typehints_format = "short"

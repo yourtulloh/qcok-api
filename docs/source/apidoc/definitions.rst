@@ -1,7 +1,7 @@
 Definitions
 ===========
 
-.. automodule:: qbittorrentapi.definitions
+.. automodule:: qcokapi.definitions
     :members:
     :exclude-members: TorrentStates
     :undoc-members:

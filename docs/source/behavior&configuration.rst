@@ -4,14 +4,14 @@ Behavior & Configuration
 Host, Username and Password
 ***************************
 * The authentication credentials can be provided when instantiating
-  :class:`~qbittorrentapi.client.Client`:
+  :class:`~qcokapi.client.Client`:
 
 .. code:: python
 
     qbt_client = Client(host="localhost:8080", username='...', password='...')
 
-* The credentials can also be specified after :class:`~qbittorrentapi.client.Client`
-  is created but calling :meth:`~qbittorrentapi.auth.AuthAPIMixIn.auth_log_in` is not
+* The credentials can also be specified after :class:`~qcokapi.client.Client`
+  is created but calling :meth:`~qcokapi.auth.AuthAPIMixIn.auth_log_in` is not
   strictly necessary to authenticate the client; this will happen automatically for any
   API request.
 
@@ -32,16 +32,16 @@ qBittorrent Session Management
 * This client will transparently manage sessions by ensuring the client is always logged
   in in-line with any API request including requesting a new session upon expiration of
   an existing session.
-* However, each new :class:`~qbittorrentapi.client.Client` instantiation will create a
+* However, each new :class:`~qcokapi.client.Client` instantiation will create a
   new session in qBittorrent.
-* Therefore, if many :class:`~qbittorrentapi.client.Client` instances will be created be
-  sure to call :class:`~qbittorrentapi.auth.AuthAPIMixIn.auth_log_out` for each instance
+* Therefore, if many :class:`~qcokapi.client.Client` instances will be created be
+  sure to call :class:`~qcokapi.auth.AuthAPIMixIn.auth_log_out` for each instance
   or use a context manager.
 * Otherwise, qBittorrent may experience abnormally high memory usage.
 
 .. code:: python
 
-    with qbittorrentapi.Client(**conn_info) as qbt_client:
+    with qcokapi.Client(**conn_info) as qbt_client:
         if qbt_client.torrents_add(urls="...") != "Ok.":
             raise Exception("Failed to add torrent.")
 
@@ -73,7 +73,7 @@ Requests Configuration
   for full details.
 * These parameters are exposed here in two ways; the examples below tell ``Requests`` to
   use a connect timeout of 3.1 seconds and a read timeout of 30 seconds.
-* When you instantiate :class:`~qbittorrentapi.client.Client`, you can specify the
+* When you instantiate :class:`~qcokapi.client.Client`, you can specify the
   parameters to use in all HTTP requests to qBittorrent:
 
 .. code:: python
@@ -88,7 +88,7 @@ Requests Configuration
 
 * Additionally, configuration for the :class:`~requests.adapters.HTTPAdapter` for the
   :class:`~requests.Session` can be specified via the ``HTTPADAPTER_ARGS`` parameter for
-  :class:`~qbittorrentapi.client.Client`:
+  :class:`~qcokapi.client.Client`:
 
 .. code:: python
 
@@ -133,14 +133,14 @@ qBittorrent Version Checking
 * The most likely situation for this to occur is if the qBittorrent team publishes a new
   release but its changes have not been incorporated in to this client yet.
 * Instantiate Client like below to raise
-  :class:`~qbittorrentapi.exceptions.UnsupportedQbittorrentVersion` exception for versions
+  :class:`~qcokapi.exceptions.UnsupportedQbittorrentVersion` exception for versions
   not fully supported:
 
 .. code:: python
 
     qbt_client = Client(..., RAISE_ERROR_FOR_UNSUPPORTED_QBITTORRENT_VERSIONS=True)
 
-* Additionally, :class:`~qbittorrentapi._version_support.Version` can be used for manual
+* Additionally, :class:`~qcokapi._version_support.Version` can be used for manual
   introspection of the versions.
 
 .. code:: python
@@ -154,6 +154,6 @@ Disable Logging Debug Output
 
 .. code:: python
 
-    logging.getLogger('qbittorrentapi').setLevel(logging.INFO)
+    logging.getLogger('qcokapi').setLevel(logging.INFO)
     logging.getLogger('requests').setLevel(logging.INFO)
     logging.getLogger('urllib3').setLevel(logging.INFO)

@@ -1,7 +1,7 @@
 Async Support
 =============
 
-``qbittorrent-api`` does not support Python's ``async/await`` functionality for
+``qcokapi`` does not support Python's ``async/await`` functionality for
 asynchronous programming. However, many use-cases for this client operate within an
 existing asynchronous application. Therefore, in lieu of being able to await this
 client's API calls to qBittorrent, it is still possible to call them without blocking.
@@ -23,9 +23,9 @@ Below is a full example demonstrating this that can be run in the Python REPL:
 .. code:: python
 
     import asyncio
-    import qbittorrentapi
+    import qcokapi
 
-    qbt_client = qbittorrentapi.Client()
+    qbt_client = qcokapi.Client()
 
     async def fetch_qbt_info():
         return await asyncio.to_thread(qbt_client.app_build_info)

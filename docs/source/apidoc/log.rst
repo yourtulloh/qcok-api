@@ -1,33 +1,33 @@
 Log
 ===
 
-.. autoclass:: qbittorrentapi.log.LogAPIMixIn
+.. autoclass:: qcokapi.log.LogAPIMixIn
     :members:
     :undoc-members:
     :exclude-members: log
     :show-inheritance:
 
-.. autoclass:: qbittorrentapi.log.Log
+.. autoclass:: qcokapi.log.Log
     :members:
     :undoc-members:
     :special-members: __call__
 
-.. autoclass:: qbittorrentapi.log.LogPeersList
+.. autoclass:: qcokapi.log.LogPeersList
     :members:
     :undoc-members:
     :show-inheritance:
 
-.. autoclass:: qbittorrentapi.log.LogPeer
+.. autoclass:: qcokapi.log.LogPeer
     :members:
     :undoc-members:
     :show-inheritance:
 
-.. autoclass:: qbittorrentapi.log.LogMainList
+.. autoclass:: qcokapi.log.LogMainList
     :members:
     :undoc-members:
     :show-inheritance:
 
-.. autoclass:: qbittorrentapi.log.LogEntry
+.. autoclass:: qcokapi.log.LogEntry
     :members:
     :undoc-members:
     :show-inheritance:

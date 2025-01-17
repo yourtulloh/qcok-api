@@ -3,9 +3,9 @@ from pathlib import Path
 
 import pytest
 
-from qbittorrentapi import APINames
-from qbittorrentapi.exceptions import NotFound404Error
-from qbittorrentapi.torrentcreator import (
+from qcokapi import APINames
+from qcokapi.exceptions import NotFound404Error
+from qcokapi.torrentcreator import (
     TaskStatus,
     TorrentCreatorTaskDictionary,
     TorrentCreatorTaskStatus,

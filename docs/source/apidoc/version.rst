@@ -1,6 +1,6 @@
 Version
 =======
 
-.. autoclass:: qbittorrentapi._version_support.Version
+.. autoclass:: qcokapi._version_support.Version
     :members:
     :undoc-members:

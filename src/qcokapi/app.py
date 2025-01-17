@@ -6,8 +6,8 @@ from json import dumps
 from logging import Logger, getLogger
 from typing import Any, AnyStr, Union
 
-from qbittorrentapi.auth import AuthAPIMixIn
-from qbittorrentapi.definitions import (
+from qcokapi.auth import AuthAPIMixIn
+from qcokapi.definitions import (
     APIKwargsT,
     APINames,
     ClientCache,
@@ -79,7 +79,7 @@ class AppAPIMixIn(AuthAPIMixIn):
     Implementation of all ``Application`` API methods.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> client.app_version()
         >>> client.app_preferences()
@@ -308,7 +308,7 @@ class Application(ClientCache[AppAPIMixIn]):
     Allows interaction with ``Application`` API endpoints.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> # these are all the same attributes that are available as named in the
         >>> #  endpoints or the more pythonic names in Client (with or without 'app_' prepended)

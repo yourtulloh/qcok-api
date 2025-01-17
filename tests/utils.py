@@ -3,8 +3,8 @@ from time import sleep
 
 import pytest
 
-from qbittorrentapi import APIConnectionError, Client, TorrentDictionary
-from qbittorrentapi._version_support import (
+from qcokapi import APIConnectionError, Client, TorrentDictionary
+from qcokapi._version_support import (
     APP_VERSION_2_API_VERSION_MAP as api_version_map,
 )
 

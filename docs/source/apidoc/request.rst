@@ -1,7 +1,7 @@
 Request (internal)
 ==================
 
-.. automodule:: qbittorrentapi.request
+.. automodule:: qcokapi.request
     :members:
     :private-members:
     :undoc-members:

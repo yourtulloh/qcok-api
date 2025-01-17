@@ -3,13 +3,13 @@ from __future__ import annotations
 from collections.abc import Mapping
 from typing import Any
 
-from qbittorrentapi.log import LogAPIMixIn
-from qbittorrentapi.rss import RSSAPIMixIn
-from qbittorrentapi.search import SearchAPIMixIn
-from qbittorrentapi.sync import SyncAPIMixIn
-from qbittorrentapi.torrentcreator import TorrentCreatorAPIMixIn
-from qbittorrentapi.torrents import TorrentsAPIMixIn
-from qbittorrentapi.transfer import TransferAPIMixIn
+from qcokapi.log import LogAPIMixIn
+from qcokapi.rss import RSSAPIMixIn
+from qcokapi.search import SearchAPIMixIn
+from qcokapi.sync import SyncAPIMixIn
+from qcokapi.torrentcreator import TorrentCreatorAPIMixIn
+from qcokapi.torrents import TorrentsAPIMixIn
+from qcokapi.transfer import TransferAPIMixIn
 
 # NOTES
 # Implementation
@@ -59,11 +59,11 @@ class Client(
     Initialize API for qBittorrent client.
 
     Host must be specified. Username and password can be specified at login.
-    A call to :meth:`~qbittorrentapi.auth.AuthAPIMixIn.auth_log_in` is not explicitly
+    A call to :meth:`~qcokapi.auth.AuthAPIMixIn.auth_log_in` is not explicitly
     required if username and password are provided during Client construction.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host='localhost:8080', username='admin', password='adminadmin')
         >>> torrents = client.torrents_info()
 
@@ -83,7 +83,7 @@ class Client(
     :param VERIFY_WEBUI_CERTIFICATE: Set to ``False`` to skip verify certificate for
         HTTPS connections; for instance, if the connection is using a self-signed
         certificate. Not setting this to ``False`` for self-signed certs will cause a
-        :class:`~qbittorrentapi.exceptions.APIConnectionError` exception to be raised.
+        :class:`~qcokapi.exceptions.APIConnectionError` exception to be raised.
     :param EXTRA_HEADERS: Dictionary of HTTP Headers to include in all requests
         made to qBittorrent.
     :param REQUESTS_ARGS: Dictionary of configuration for each HTTP request made by
@@ -99,7 +99,7 @@ class Client(
         may not be implemented in older versions of qBittorrent. Setting this to ``True``
         will raise a :class:`NotImplementedError` instead of just returning ``None``.
     :param RAISE_ERROR_FOR_UNSUPPORTED_QBITTORRENT_VERSIONS: Raise
-        :class:`~qbittorrentapi.exceptions.UnsupportedQbittorrentVersion` if the
+        :class:`~qcokapi.exceptions.UnsupportedQbittorrentVersion` if the
         connected version of qBittorrent is not fully supported by this client.
         Defaults ``False``.
     :param DISABLE_LOGGING_DEBUG_OUTPUT: Turn off debug output from logging for

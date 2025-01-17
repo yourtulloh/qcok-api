@@ -2,9 +2,9 @@ from __future__ import annotations
 
 from collections.abc import Iterable
 
-from qbittorrentapi._version_support import v
-from qbittorrentapi.app import AppAPIMixIn
-from qbittorrentapi.definitions import (
+from qcokapi._version_support import v
+from qcokapi.app import AppAPIMixIn
+from qcokapi.definitions import (
     APIKwargsT,
     APINames,
     ClientCache,
@@ -26,7 +26,7 @@ class TransferAPIMixIn(AppAPIMixIn):
     Implementation of all ``Transfer`` API methods.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> transfer_info = client.transfer_info()
         >>> client.transfer_set_download_limit(limit=1024000)
@@ -190,7 +190,7 @@ class Transfer(ClientCache[TransferAPIMixIn]):
     Allows interaction with the ``Transfer`` API endpoints.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> # these are all the same attributes that are available as named in the
         >>> #  endpoints or the more pythonic names in Client (with or without 'transfer_' prepended)

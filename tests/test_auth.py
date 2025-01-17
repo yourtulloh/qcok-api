@@ -2,8 +2,8 @@ import sys
 
 import pytest
 
-from qbittorrentapi import APINames, Client
-from qbittorrentapi.exceptions import APIConnectionError
+from qcokapi import APINames, Client
+from qcokapi.exceptions import APIConnectionError
 
 
 @pytest.mark.skipif(sys.version_info < (3, 9), reason="removeprefix not in 3.8")

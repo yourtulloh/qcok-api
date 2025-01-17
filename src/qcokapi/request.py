@@ -15,15 +15,15 @@ from urllib3 import disable_warnings
 from urllib3.exceptions import InsecureRequestWarning
 from urllib3.util.retry import Retry
 
-from qbittorrentapi._version_support import v
-from qbittorrentapi.definitions import (
+from qcokapi._version_support import v
+from qcokapi.definitions import (
     APIKwargsT,
     APINames,
     Dictionary,
     FilesToSendT,
     List,
 )
-from qbittorrentapi.exceptions import (
+from qcokapi.exceptions import (
     APIConnectionError,
     APIError,
     Conflict409Error,
@@ -41,22 +41,22 @@ from qbittorrentapi.exceptions import (
 )
 
 if TYPE_CHECKING:
-    from qbittorrentapi.app import Application
-    from qbittorrentapi.auth import Authorization
-    from qbittorrentapi.log import Log
-    from qbittorrentapi.rss import RSS
-    from qbittorrentapi.search import Search
-    from qbittorrentapi.sync import Sync
-    from qbittorrentapi.torrentcreator import TorrentCreator
-    from qbittorrentapi.torrents import TorrentCategories, Torrents, TorrentTags
-    from qbittorrentapi.transfer import Transfer
+    from qcokapi.app import Application
+    from qcokapi.auth import Authorization
+    from qcokapi.log import Log
+    from qcokapi.rss import RSS
+    from qcokapi.search import Search
+    from qcokapi.sync import Sync
+    from qcokapi.torrentcreator import TorrentCreator
+    from qcokapi.torrents import TorrentCategories, Torrents, TorrentTags
+    from qcokapi.transfer import Transfer
 
 T = TypeVar("T")
 ExceptionT = TypeVar("ExceptionT", bound=requests_exceptions.RequestException)
 ResponseT = TypeVar("ResponseT")
 
 logger: Logger = getLogger(__name__)
-getLogger("qbittorrentapi").addHandler(NullHandler())
+getLogger("qcokapi").addHandler(NullHandler())
 
 
 class QbittorrentURL:
@@ -353,7 +353,7 @@ class Request:
             RAISE_ERROR_FOR_UNSUPPORTED_QBITTORRENT_VERSIONS
         )
         if bool(DISABLE_LOGGING_DEBUG_OUTPUT):
-            for logger_ in ["qbittorrentapi", "requests", "urllib3"]:
+            for logger_ in ["qcokapi", "requests", "urllib3"]:
                 if getLogger(logger_).level < 20:
                     getLogger(logger_).setLevel("INFO")
 
@@ -425,7 +425,7 @@ class Request:
         Send ``GET`` request.
 
         :param api_namespace: the namespace for the API endpoint
-            (e.g. :class:`~qbittorrentapi.definitions.APINames` or ``torrents``)
+            (e.g. :class:`~qcokapi.definitions.APINames` or ``torrents``)
         :param api_method: the name for the API endpoint (e.g. ``add``)
         :param kwargs: see :meth:`~Request._request`
         :return: Requests :class:`~requests.Response`
@@ -465,7 +465,7 @@ class Request:
         Send ``GET`` request with casted response.
 
         :param api_namespace: the namespace for the API endpoint
-            (e.g. :class:`~qbittorrentapi.definitions.APINames` or ``torrents``)
+            (e.g. :class:`~qcokapi.definitions.APINames` or ``torrents``)
         :param api_method: the name for the API endpoint (e.g. ``add``)
         :param kwargs: see :meth:`~Request._request`
         """
@@ -507,7 +507,7 @@ class Request:
         Send ``POST`` request.
 
         :param api_namespace: the namespace for the API endpoint
-            (e.g. :class:`~qbittorrentapi.definitions.APINames` or ``torrents``)
+            (e.g. :class:`~qcokapi.definitions.APINames` or ``torrents``)
         :param api_method: the name for the API endpoint (e.g. ``add``)
         :param kwargs: see :meth:`~Request._request`
         """
@@ -546,7 +546,7 @@ class Request:
         Send ``POST`` request with casted response.
 
         :param api_namespace: the namespace for the API endpoint
-            (e.g. :class:`~qbittorrentapi.definitions.APINames` or ``torrents``)
+            (e.g. :class:`~qcokapi.definitions.APINames` or ``torrents``)
         :param api_method: the name for the API endpoint (e.g. ``add``)
         :param kwargs: see :meth:`~Request._request`
         """
@@ -769,7 +769,7 @@ class Request:
 
         :param http_method: ``get`` or ``post``
         :param api_namespace: the namespace for the API endpoint
-            (e.g. :class:`~qbittorrentapi.definitions.APINames` or ``torrents``)
+            (e.g. :class:`~qcokapi.definitions.APINames` or ``torrents``)
         :param api_method: the name for the API endpoint (e.g. ``add``)
         :param requests_args: default location for Requests kwargs
         :param requests_params: alternative location for Requests kwargs

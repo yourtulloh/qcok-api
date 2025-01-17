@@ -3,8 +3,8 @@ from __future__ import annotations
 from collections.abc import Mapping
 from json import dumps
 
-from qbittorrentapi.app import AppAPIMixIn
-from qbittorrentapi.definitions import (
+from qcokapi.app import AppAPIMixIn
+from qcokapi.definitions import (
     APIKwargsT,
     APINames,
     ClientCache,
@@ -26,7 +26,7 @@ class RSSAPIMixIn(AppAPIMixIn):
     Implementation of all ``RSS`` API methods.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> rss_rules = client.rss_rules()
         >>> client.rss_set_rule(rule_name="...", rule_def={...})
@@ -313,7 +313,7 @@ class RSS(ClientCache[RSSAPIMixIn]):
     Allows interaction with ``RSS`` API endpoints.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> # this is all the same attributes that are available as named in the
         >>> #  endpoints or the more pythonic names in Client (with or without 'log_' prepended)

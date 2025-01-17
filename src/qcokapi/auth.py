@@ -6,16 +6,16 @@ from typing import TYPE_CHECKING
 
 from requests import Response
 
-from qbittorrentapi._version_support import Version
-from qbittorrentapi.definitions import APIKwargsT, APINames, ClientCache
-from qbittorrentapi.exceptions import (
+from qcokapi._version_support import Version
+from qcokapi.definitions import APIKwargsT, APINames, ClientCache
+from qcokapi.exceptions import (
     LoginFailed,
     UnsupportedQbittorrentVersion,
 )
-from qbittorrentapi.request import Request
+from qcokapi.request import Request
 
 if TYPE_CHECKING:
-    from qbittorrentapi.client import Client
+    from qcokapi.client import Client
 
 logger: Logger = getLogger(__name__)
 
@@ -25,7 +25,7 @@ class AuthAPIMixIn(Request):
     Implementation of all ``Authorization`` API methods.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> _ = client.is_logged_in
         >>> client.auth_log_in(username="admin", password="adminadmin")
@@ -159,7 +159,7 @@ class Authorization(ClientCache[AuthAPIMixIn]):
     Allows interaction with the ``Authorization`` API endpoints.
 
     :Usage:
-        >>> from qbittorrentapi import Client
+        >>> from qcokapi import Client
         >>> client = Client(host="localhost:8080", username="admin", password="adminadmin")
         >>> is_logged_in = client.auth.is_logged_in
         >>> client.auth.log_in(username="admin", password="adminadmin")
